@@ -14,7 +14,7 @@ Analysis of 9,994 retail order lines (2014–2017, United States) to identify wh
 
 ## Process
 
-1. **Cleaned** the raw dataset in Excel — validated for nulls and duplicates, standardized date formats, added a Profit Margin calculated column. Full notes in `Project1_Documentation.md`.
+1. **Cleaned** the raw dataset in Excel — validated for nulls and duplicates, standardized date formats, added a Profit Margin calculated column.
 2. **Analyzed** the cleaned data with SQL to answer six specific business questions — see `analysis_queries.sql`.
 3. **Visualized** the results in Power BI as an interactive dashboard with KPI cards, regional breakdown, monthly trend, and profitability by product line.
 
@@ -31,7 +31,7 @@ Analysis of 9,994 retail order lines (2014–2017, United States) to identify wh
 | 5 | Who are the highest lifetime-value customers? | Top 10 customers each generate $12K–$25K in lifetime sales |
 | 6 | Which sub-categories are losing money? | Tables (-$17.7K), Bookcases (-$3.5K), Supplies (-$1.2K) — despite decent revenue |
 
-Full queries with results: [`analysis_queries.sql`](analysis_queries.sql)
+Full queries: [`analysis_queries.sql`](analysis_queries.sql)
 
 ---
 
@@ -63,7 +63,12 @@ Segment-level margins run Home Office (14.0%) > Corporate (13.0%) > Consumer (11
 
 ## Files in this repo
 
-- `analysis_queries.sql` — SQL queries with results
+- `analysis_queries.sql` — the six SQL queries above
+- `Super_Store Sales Performance Dashboard (2014-2017).pbix` — the Power BI dashboard
 - `Superstore_Cleaned.xlsx` — cleaned dataset (source for the Power BI file)
 - `dashboard_screenshot.png` — dashboard preview
 
+
+## License
+
+[MIT](LICENSE) © 2026 Hafeez Khan
