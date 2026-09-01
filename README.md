@@ -14,7 +14,7 @@ Analysis of 9,994 retail order lines (2014–2017, United States) to identify wh
 
 ## Process
 
-1. **Cleaned** the raw dataset in Excel — validated for nulls and duplicates, standardized date formats, added a Profit Margin calculated column.
+1. **Cleaned** the raw dataset (`Superstore_Raw.csv`) in Excel — validated for nulls and duplicates, standardized date formats, added a Profit Margin calculated column.
 2. **Analyzed** the cleaned data with SQL to answer six specific business questions — see `analysis_queries.sql`.
 3. **Visualized** the results in Power BI as an interactive dashboard with KPI cards, regional breakdown, monthly trend, and profitability by product line.
 
@@ -71,10 +71,19 @@ Segment-level margins run Home Office (14.0%) > Corporate (13.0%) > Consumer (11
 
 ---
 
+## Data
+
+`Superstore_Raw.csv` is the original extract exactly as downloaded — 9,994 rows × 21 columns, committed unmodified. `Superstore_Cleaned.xlsx` is the analysis layer built from it and is what the SQL queries and the Power BI file run against.
+
+The two reconcile exactly: same 9,994 rows, same **$2,297,200.86** total sales, same **$286,397.02** total profit, same **15.62%** mean discount. Cleaning changed the shape, not the totals — dates converted from `M/D/YYYY` text to real date values, and a `Profit Margin` column added (22 columns against the raw file's 21). No rows were added or removed.
+
+One item worth stating rather than hiding: the raw file contains a single exact duplicate pair — Row IDs 3406 and 3407, same order `US-2014-150119`, same product, same sales, quantity and profit. It carries through into the cleaned file, so every figure in this repo includes it. At $281.37 against $2.3M in sales its effect is immaterial, but it is there.
+
 ## Files in this repo
 
 - `analysis_queries.sql` — all 14 queries with their results: the six questions above (Q1–Q6) plus the evidence behind each insight below (Q7–Q14)
 - `Super_Store Sales Performance Dashboard (2014-2017).pbix` — the Power BI dashboard
+- `Superstore_Raw.csv` — the original extract, committed unmodified (9,994 rows × 21 columns)
 - `Superstore_Cleaned.xlsx` — cleaned dataset (source for the Power BI file)
 - `dashboard_screenshot.png` — dashboard preview
 
